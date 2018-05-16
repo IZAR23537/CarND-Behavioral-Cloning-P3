@@ -95,6 +95,7 @@ To capture good driving behavior, I first recorded two laps on track one using c
 I then recorded a counter-clockwise driving so that i would have more right turning data  
 
 Samples of the left, center and right camera captures:
+
 ![left_image](./sample/left_2018_05_16_11_11_01_301.jpg)
 ![center_image](./sample/center_2018_05_16_11_11_01_301.jpg)
 ![right_image](./sample/right_2018_05_16_11_11_01_301.jpg)
