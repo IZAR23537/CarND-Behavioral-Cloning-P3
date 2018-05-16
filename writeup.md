@@ -63,11 +63,16 @@ The final architecture:
 | Input					 | 160x320x3 RGB image 							| 
 | Normalization Layer	 |  											|
 | Cropping2D Layer		 | Crop image top 50 pixels, bottom 20 pixels 	| 
-| Convolution Layer 1  	 | 5x5 kernel, 2x2 stride, RELU activation 		|
-| Convolution Layer 2  	 | 5x5 kernel, 2x2 stride, RELU activation 		|
-| Convolution Layer 3  	 | 5x5 kernel, 2x2 stride, RELU activation 		|
-| Convolution Layer 4  	 | 3x3 kernel, RELU activation 					|
-| Convolution Layer 5  	 | 3x3 kernel, RELU activation 					|
+| Convolution Layer 1  	 | 5x5 kernel, 2x2 stride, Valid padding		|
+| RELU activation 		 |												|
+| Convolution Layer 2  	 | 5x5 kernel, 2x2 stride, Valid padding		|
+| RELU activation 		 |												|
+| Convolution Layer 3  	 | 5x5 kernel, 2x2 stride, Valid padding		|
+| RELU activation 		 |												|
+| Convolution Layer 4  	 | 3x3 kernel, 2x2 stride, Valid padding		|
+| RELU activation 		 |												|
+| Convolution Layer 5  	 | 3x3 kernel 2x2 stride, Valid padding			|
+| RELU activation 		 |												|
 | Dropout 				 | 20% to reduce overfitting					|
 | Fatten				 | 												|
 | Fully connected Layer 1| Output: 100 neurons							|
@@ -90,7 +95,7 @@ To capture good driving behavior, I first recorded two laps on track one using c
 I then recorded a counter-clockwise driving so that i would have more right turning data  
 
 
-After the collection process, I had 15918 number of data points. Then, i preprocessed this data with a lambda fuction, where the image data is divided by 255 and subtracting it by 0,5. Also, i cropped the images, 50 pixels from the top and 20 pixels from the bottom.
+After the collection process, I had 12734 number of data points. Then, i preprocessed this data with a lambda fuction, where the image data is divided by 255 and subtracting it by 0,5. Also, i cropped the images, 50 pixels from the top and 20 pixels from the bottom.
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 

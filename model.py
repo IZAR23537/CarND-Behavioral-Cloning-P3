@@ -28,7 +28,7 @@ for line in lines:
 	measurements.append(measurement - correction)
 	
 from keras.models import Sequential, Model
-from keras.layers import Flatten, Dense, Lambda, Conv2D, Cropping2D, Dropout
+from keras.layers import Flatten, Dense, Lambda, Convolution2D, Cropping2D, Dropout, Activation
 from keras.layers.pooling import MaxPooling2D
 from keras.layers import Lambda
 
@@ -41,17 +41,33 @@ model = Sequential()
 model.add(Lambda(lambda x: x/255.0 -0.5, input_shape=(160,320,3)))
 model.add(Cropping2D(cropping=((50,20),(0,0))))
 
-#Using Nvidia model architecture with dropout 
-model.add(Conv2D(24, (5, 5), activation="relu"))
-model.add(Conv2D(36, (5, 5), activation="relu"))
-model.add(Conv2D(48, (5, 5), activation="relu"))
-model.add(Conv2D(64, (3, 3), activation="relu"))
-model.add(Conv2D(64, (3, 3), activation="relu"))
+#Using Nvidia model architecture with dropout
+
+model.add(Convolution2D(24, 5, 5, subsample=(2, 2), border_mode="valid")) 
+model.add(Activation(activation='relu'))
+
+model.add(Convolution2D(36, 5, 5, subsample=(2, 2), border_mode="valid")) 
+model.add(Activation(activation='relu'))
+
+model.add(Convolution2D(48, 5, 5, subsample=(2, 2), border_mode="valid")) 
+model.add(Activation(activation='relu'))
+
+model.add(Convolution2D(64, 3, 3, subsample=(2, 2), border_mode="valid")) 
+model.add(Activation(activation='relu'))
+
+model.add(Convolution2D(64, 3, 3, subsample=(2, 2), border_mode="valid")) 
+model.add(Activation(activation='relu'))
+
 model.add(Dropout(0.2))
+
 model.add(Flatten())
+
 model.add(Dense(100))
+
 model.add(Dense(50))
+
 model.add(Dense(10))
+
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
