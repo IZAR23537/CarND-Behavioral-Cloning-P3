@@ -97,7 +97,9 @@ I then recorded a counter-clockwise driving so that i would have more right turn
 Samples of the left, center and right camera captures:
 
 ![left_image](./sample/left_2018_05_16_11_11_01_301.jpg)
+
 ![center_image](./sample/center_2018_05_16_11_11_01_301.jpg)
+
 ![right_image](./sample/right_2018_05_16_11_11_01_301.jpg)
 
 After the collection process, I had 12734 number of data points. Then, i preprocessed this data with a lambda fuction, where the image data is divided by 255 and subtracting it by 0,5. Also, i cropped the images, 50 pixels from the top and 20 pixels from the bottom.
