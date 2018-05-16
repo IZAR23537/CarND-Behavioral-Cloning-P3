@@ -102,4 +102,4 @@ I finally randomly shuffled the data set and put 20% of the data into a validati
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 2, because after the 2nd epoch the validation loss is going up and down which is a sign that the model maybe overfitting the training data
 
 The final result:
-[Autonomous_car_driving](https://youtu.be/xHGzEX4JgZc)
+[Autonomous_car_driving](https://youtu.be/Ye1l_cX-hd8)
