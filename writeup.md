@@ -71,7 +71,7 @@ The final architecture:
 | RELU activation 		 |												|
 | Convolution Layer 4  	 | 3x3 kernel, 2x2 stride, Valid padding		|
 | RELU activation 		 |												|
-| Convolution Layer 5  	 | 3x3 kernel 2x2 stride, Valid padding			|
+| Convolution Layer 5  	 | 3x3 kernel, 2x2 stride, Valid padding		|
 | RELU activation 		 |												|
 | Dropout 				 | 20% to reduce overfitting					|
 | Fatten				 | 												|
