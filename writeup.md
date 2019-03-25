@@ -43,7 +43,7 @@ I chose the Nvidia convolution neural network architecture as a base architectur
 | Convolution Layer 3  	 | 5x5 kernel, 2x2 stride, RELU activation 		|
 | Convolution Layer 4  	 | 3x3 kernel, RELU activation 					|
 | Convolution Layer 5  	 | 3x3 kernel, RELU activation 					|
-| Fatten				 |												|
+| Flatten				 |												|
 | Fully connected Layer 1| Output: 100 neurons							|
 | Fully connected Layer 2| Output: 50 neurons							|
 | Fully connected Layer 3| Output: 10 neurons							|
@@ -74,7 +74,7 @@ The final architecture:
 | Convolution Layer 5  	 | 3x3 kernel, 2x2 stride, Valid padding		|
 | RELU activation 		 |												|
 | Dropout 				 | 20% to reduce overfitting					|
-| Fatten				 | 												|
+| Flatten				 | 												|
 | Fully connected Layer 1| Output: 100 neurons							|
 | Fully connected Layer 2| Output: 50 neurons							|
 | Fully connected Layer 3| Output: 10 neurons							|
